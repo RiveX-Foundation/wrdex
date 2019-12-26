@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
 	Link
   } from "react-router-dom";
+import axios from 'axios';
 import Logo from '../src/images/logo.png';
 import ArrowPrev from '../src/images/landing/arrow_left.png';
 import ArrowNext from '../src/images/landing/arrow_right.png';
@@ -101,28 +102,54 @@ export default class Landing extends Component {
 				// centerMode: true,
 				prevArrow: <img src={ArrowPrev} className="slickarrow" />,
 				nextArrow: <img src={ArrowNext} className="slickarrow" />,
-			}
+			},
+			bannerlist:[],
+			bannerfetch:false
 		}
+	}
+
+	componentWillMount(){
+		this._getWRDEXBanner();
 	}
 
 	componentDidMount(){
 		AOS.init();
 	}
 
+	_getWRDEXBanner = () =>{
+		axios.post('http://rvxadmin.boxybanana.com/API/WRDex/GetWRDexBanner', {}).then((response) =>{ 
+			let result = response.data;
+			// console.log(response);
+			if(result.status == 200){
+				if(result.bannerlist.length > 0){
+					this.setState({
+						bannerfetch:true,
+						bannerlist:result.bannerlist
+					})
+				}
+			}
+		}).catch((error) =>{
+			console.log(error);
+		});
+	}
+
 	render() {
 		return (
 			<div className="main">
 				<Header />
+				{this.state.bannerfetch ?
 				<div className="sliderctn">
 					<Slider {...this.state.settings}>
-						<div>
-							<img src={Banner01} className="slickimg" />
-						</div>
-						{/* <div>
-							<img src={Banner01} className="slickimg" />
-						</div> */}
+						{this.state.bannerlist.map((item,index)=>{
+							return(
+								<div key={index}>
+									<img src={item.PictureUrl} className="slickimg" />
+								</div>
+							)
+						})}
 					</Slider>
 				</div>
+				: null }
 				<div className="landingcenter">
 					<div className="container">
 						<div className="landingitem one" data-aos="fade-up-right">
