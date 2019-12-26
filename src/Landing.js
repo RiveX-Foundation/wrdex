@@ -143,7 +143,7 @@ export default class Landing extends Component {
 						{this.state.bannerlist.map((item,index)=>{
 							return(
 								<div key={index}>
-									<img src={item.PictureUrl} className="slickimg" />
+									<img style={item.RedirectUrl != "" && item.RedirectUrl != null ? {cursor:'pointer'} : {}} src={item.PictureUrl} className="slickimg" onClick={item.RedirectUrl != "" && item.RedirectUrl != null ? ()=> window.open(`${item.RedirectUrl}`,'_blank'):null} />
 								</div>
 							)
 						})}
