@@ -182,7 +182,7 @@ export default class Landing extends Component {
 							<div className="imgctn">
 								<img src={Item02} className="itemimg two" />
 							</div>
-							<div className="title">PRIVATE SECURITY</div>
+							<div className="title">PRIVACY</div>
 							<div className="desc">
 								No logins are required as WRDEX is directly accessed from the user's wallets.
 							</div>
