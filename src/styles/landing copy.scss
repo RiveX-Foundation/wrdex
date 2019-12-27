@@ -94,16 +94,10 @@ header{
 }
 .landingheader{
     padding: 20px 0px;
-    .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
 .landingfooter{
-    // background-color: #08081E;
-    background-image: linear-gradient(to bottom, #3a3f7f, #3b4687, #3b4d8f, #3c5497, #3c5b9f, #3763a6, #316cac, #2c74b2, #247fb6, #2489b9, #2d93bb, #3a9dbc);
+    background-color: #08081E;
     // background-image: linear-gradient(to bottom, #272b5d, #26295b, #252858, #232656, #222554, #212452, #1f2250, #1e214e, #1d1f4b, #1c1e49, #1a1c46, #191b44);
     min-height: 200px;
     padding:20px 0;
@@ -198,44 +192,154 @@ header{
         -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
         box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         padding: 50px 0px;
-        flex-wrap: wrap;
-        align-items: flex-start;
     }
 }
 
 .landingitem{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: calc(100% / 3);
-    padding: 0px 30px 80px;
-    // margin-bottom: 50px;
+    align-items: flex-start;
+    margin-bottom: 50px;
     &.end{
         align-items: flex-end;
     }
-    .title{
+    .title,.mobiletitle{
         color: #6EF1FF;
-        font-size: 20px;
+        font-size: 24px;
         // font-weight: bold;
         margin-bottom: 5px;
         font-family: 'GILB';
-        text-align: center;
     }
+    .mobiletitle{
+        display: none;
+    }
+    // .info{
+    //     background-color: rgba(41, 45, 97,0.5);
+    //     border-radius: 15px;
+    //     position: relative;
+    //     display: flex;
+    //     padding: 20px;
+    //     -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    //     -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    //     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    //     width: 60%;
+    // }
     .imgctn{
         position: relative;
     }
     .desc{
         color:#AFB1C1;
-        font-size: 16px;
-        text-align: center;
-        // margin-left: 30px;
+        font-size: 18px;
+        margin-left: 30px;
         &.rtl{
             text-align: right;
         }
     }
-    .itemimg{
-        height: 100px;
+    &.one{
+        margin-left: 100px;
+        .title{
+            margin-left: 200px;
+        }
+        .imgctn{
+            min-height: 100px;
+            min-width: 150px;
+            .itemimg{
+                width: 190px;
+                // position: absolute;
+                // left: -40px;
+                // top: -80px;
+            }
+        }
+    }
+    &.two{
+        margin-right: 100px;
+        .info{
+            background-color: rgba(99, 123, 198, 0.7);
+        }
+        .title{
+            margin-right: 205px;
+        }
+        .imgctn{
+            min-height: 100px;
+            min-width: 190px;
+            .itemimg{
+                width: 220px;
+                position: absolute;
+                right: -60px;
+                bottom: -40px;
+            }
+        }
+    }
+    &.three{
+        margin-left: 100px;
+        .title{
+            margin-left: 200px;
+        }
+        .imgctn{
+            min-height: 100px;
+            min-width: 150px;
+            .itemimg{
+                width: 220px;
+                position: absolute;
+                left: -40px;
+                top: -105px;
+            }
+        }
+    }
+    &.four{
+        margin-right: 100px;
+        .info{
+            background-color: rgba(99, 123, 198, 0.7);
+        }
+        .title{
+            margin-right: 240px;
+        }
+        .imgctn{
+            min-height: 100px;
+            min-width: 220px;
+            .itemimg{
+                width: 290px;
+                position: absolute;
+                right: -85px;
+                bottom: -10px;
+            }
+        }
+    }
+    &.five{
+        margin-left: 100px;
+        .title{
+            margin-left: 200px;
+        }
+        .imgctn{
+            min-height: 100px;
+            min-width: 150px;
+            .itemimg{
+                width: 220px;
+                position: absolute;
+                left: -40px;
+                top: -105px;
+            }
+        }
+    }
+    &.six{
+        margin-right: 100px;
+        .info{
+            background-color: rgba(99, 123, 198, 0.7);
+        }
+        .title{
+            margin-right: 240px;
+        }
+        .imgctn{
+            min-height: 100px;
+            min-width: 220px;
+            .itemimg{
+                width: 230px;
+                position: absolute;
+                right: -35px;
+                bottom: -39px;
+            }
+        }
     }
 }

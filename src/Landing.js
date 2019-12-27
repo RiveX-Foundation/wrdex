@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {
 	Link
-  } from "react-router-dom";
+} from "react-router-dom";
 import axios from 'axios';
 import Logo from '../src/images/logo.png';
 import ArrowPrev from '../src/images/landing/arrow_left.png';
 import ArrowNext from '../src/images/landing/arrow_right.png';
-import Banner01 from '../src/images/banner/01.png';
-import FooterLogo from '../src/images/landing/wrdex_color.png';
+// import Banner01 from '../src/images/banner/01.png';
+import FooterLogo from '../src/images/WR_1.png';
 //Item
 import Item01 from '../src/images/landing/graphic_1.png';
 import Item02 from '../src/images/landing/graphic_2.png';
@@ -32,15 +32,15 @@ import './styles/landing_responsive.scss';
 
 export class Header extends Component {
 	constructor(props) {
-        super(props);
-        
+		super(props);
+
 	}
 
 	render() {
 		return (
 			<header className="landingheader">
 				<div className="container">
-					<img src={Logo}  className="logo"/>
+					<img src={Logo} className="logo" />
 					<a href="/main" className="colorbtn">
 						EXCHANGE
 					</a>
@@ -53,8 +53,8 @@ export class Header extends Component {
 
 export class Footer extends Component {
 	constructor(props) {
-        super(props);
-        
+		super(props);
+
 	}
 
 	render() {
@@ -75,10 +75,10 @@ export class Footer extends Component {
 						<div className="footeritem">
 							<div className="footerlink">Social Media</div>
 							<div>
-								<img src={Icon01} className="footericon" onClick={()=> window.open('https://t.me/RiveXOfficial','_blank')}/>
-								<img src={Icon02} className="footericon" onClick={()=> window.open('https://medium.com/@RiveXOfficial','_blank')}/>
-								<img src={Icon03} className="footericon" onClick={()=> window.open('https://twitter.com/RiveXFoundation','_blank')}/>
-								<img src={Icon04} className="footericon" onClick={()=> window.open('https://github.com/RiveX-Foundation','_blank')}/>
+								<img src={Icon01} className="footericon" onClick={() => window.open('https://t.me/RiveXOfficial', '_blank')} />
+								<img src={Icon02} className="footericon" onClick={() => window.open('https://medium.com/@RiveXOfficial', '_blank')} />
+								<img src={Icon03} className="footericon" onClick={() => window.open('https://twitter.com/RiveXFoundation', '_blank')} />
+								<img src={Icon04} className="footericon" onClick={() => window.open('https://github.com/RiveX-Foundation', '_blank')} />
 							</div>
 						</div>
 					</div>
@@ -92,9 +92,9 @@ export class Footer extends Component {
 
 export default class Landing extends Component {
 	constructor(props) {
-        super(props);
+		super(props);
 		this.state = {
-			settings : {
+			settings: {
 				dots: false,
 				infinite: true,
 				speed: 500,
@@ -105,32 +105,32 @@ export default class Landing extends Component {
 				prevArrow: <img src={ArrowPrev} className="slickarrow" />,
 				nextArrow: <img src={ArrowNext} className="slickarrow" />,
 			},
-			bannerlist:[],
-			bannerfetch:false
+			bannerlist: [],
+			bannerfetch: false
 		}
 	}
 
-	componentWillMount(){
+	componentWillMount() {
 		this._getWRDEXBanner();
 	}
 
-	componentDidMount(){
-		AOS.init();
+	componentDidMount() {
+		// AOS.init();
 	}
 
-	_getWRDEXBanner = () =>{
-		axios.post('http://rvxadmin.boxybanana.com/API/WRDex/GetWRDexBanner', {}).then((response) =>{ 
+	_getWRDEXBanner = () => {
+		axios.post('http://rvxadmin.boxybanana.com/API/WRDex/GetWRDexBanner', {}).then((response) => {
 			let result = response.data;
 			// console.log(response);
-			if(result.status == 200){
-				if(result.bannerlist.length > 0){
+			if (result.status == 200) {
+				if (result.bannerlist.length > 0) {
 					this.setState({
-						bannerfetch:true,
-						bannerlist:result.bannerlist
+						bannerfetch: true,
+						bannerlist: result.bannerlist
 					})
 				}
 			}
-		}).catch((error) =>{
+		}).catch((error) => {
 			console.log(error);
 		});
 	}
@@ -140,94 +140,72 @@ export default class Landing extends Component {
 			<div className="main">
 				<Header />
 				{this.state.bannerfetch ?
-				<div className="sliderctn">
-					<Slider {...this.state.settings}>
-						{this.state.bannerlist.map((item,index)=>{
-							return(
-								<div className="items" key={index}>
-									<img style={item.RedirectUrl != "" && item.RedirectUrl != null ? {cursor:'pointer'} : {}} src={item.PictureUrl} className="slickimg" onClick={item.RedirectUrl != "" && item.RedirectUrl != null ? ()=> window.open(`${item.RedirectUrl}`,'_blank'):null} />
-								</div>
-							)
-						})}
-					</Slider>
-				</div>
-				: null }
+					<div className="sliderctn">
+						<Slider {...this.state.settings}>
+							{this.state.bannerlist.map((item, index) => {
+								return (
+									<div className="items" key={index}>
+										<img style={item.RedirectUrl != "" && item.RedirectUrl != null ? { cursor: 'pointer' } : {}} src={item.PictureUrl} className="slickimg" onClick={item.RedirectUrl != "" && item.RedirectUrl != null ? () => window.open(`${item.RedirectUrl}`, '_blank') : null} />
+									</div>
+								)
+							})}
+						</Slider>
+					</div>
+					: null}
 				<div className="landingcenter">
 					<div className="container">
-						<div className="landingitem one" data-aos="fade-up-right">
+						<div className="landingitem">
+							<div className="imgctn">
+								<img src={Item01} className="itemimg" />
+							</div>
 							<div className="title">CROSS-CHAIN</div>
-							<div className="info">
-								<div className="imgctn">
-									<img src={Item01} className="itemimg" />
-								</div>
-								<div className="mobiletitle">CROSS-CHAIN</div>
-								<div className="desc">
-									A highly decentralized exchange of digital assets
-									with wrapped BTC and ETH , more to be added in
-									the future. 
-								</div>
+							<div className="desc">
+								A highly decentralized exchange of digital assets with wrapped BTC and ETH , more to be added in the future.
 							</div>
 						</div>
-						<div className="landingitem end two" data-aos="fade-up-left">
+						<div className="landingitem">
+							<div className="imgctn">
+								<img src={Item02} className="itemimg two" />
+							</div>
 							<div className="title">PRIVATE SECURITY</div>
-							<div className="info">
-								<div className="desc rtl">
-									No login required and wallet private key never leave the browser 
-								</div>
-								<div className="mobiletitle">PRIVATE SECURITY</div>
-								<div className="imgctn">
-									<img src={Item02} className="itemimg two"/>
-								</div>
+							<div className="desc">
+								No logins are required as WRDEX is directly accessed from the user's wallets.
 							</div>
 						</div>
-						<div className="landingitem three" data-aos="fade-up-right">
+						<div className="landingitem">
+							<div className="imgctn">
+								<img src={Item03} className="itemimg" />
+							</div>
 							<div className="title">NON-CUSTODIAL</div>
-							<div className="info">
-								<div className="imgctn">
-									<img src={Item03} className="itemimg"/>
-								</div>
-								<div className="mobiletitle">NON-CUSTODIAL</div>
-								<div className="desc">
-									Private keys are fully owned by the users making it more secured.
-								</div>
+							<div className="desc">
+								Private keys are fully owned by the users making it more secured.
 							</div>
 						</div>
-						<div className="landingitem end four" data-aos="fade-up-left">
+						<div className="landingitem">
+							<div className="imgctn">
+								<img src={Item04} className="itemimg two" />
+							</div>
 							<div className="title">ON-CHAIN SETTLEMENT</div>
-							<div className="info">
-								<div className="desc rtl">
-									Transactions are happened on-chain to embark a transparent trading environment.
-								</div>
-								<div className="mobiletitle">ON-CHAIN SETTLEMENT</div>
-								<div className="imgctn">
-									<img src={Item04} className="itemimg two"/>
-								</div>
+							<div className="desc">
+								Transactions are happened on-chain to embark a transparent trading environment.
 							</div>
 						</div>
-						<div className="landingitem five" data-aos="fade-up-right">
+						<div className="landingitem">
+							<div className="imgctn">
+								<img src={Item05} className="itemimg" />
+							</div>
 							<div className="title">MULTI WALLET INTEGRATION</div>
-							<div className="info">
-								<div className="imgctn">
-									<img src={Item05} className="itemimg"/>
-								</div>
-								<div className="mobiletitle">MULTI WALLET INTEGRATION</div>
-								<div className="desc">
-									Currenlty supported by RiveX Wallet and WanWallet. Trezor and
-									Ledger are the upcoming supporting hardware wallets. More
-									cold and hot wallets to be supported. 								 
-								</div>
+							<div className="desc">
+								Currenlty supported by RiveX Wallet and WanWallet. Trezor and Ledger are the upcoming supporting hardware wallets. More cold and hot wallets to be supported.
 							</div>
 						</div>
-						<div className="landingitem end six" data-aos="fade-up-left">
+						<div className="landingitem">
+							<div className="imgctn">
+								<img src={Item06} className="itemimg two" />
+							</div>
 							<div className="title">PORTFOLIO MANAGEMENT</div>
-							<div className="info">
-								<div className="desc rtl">
-									Ease of managing assets with user friendly portfolio manager.
-								</div>
-								<div className="mobiletitle">PORTFOLIO MANAGEMENT</div>
-								<div className="imgctn">
-									<img src={Item06} className="itemimg two"/>
-								</div>
+							<div className="desc">
+								Ease of managing assets with user friendly portfolio manager.
 							</div>
 						</div>
 					</div>
