@@ -67,7 +67,7 @@ export class Footer extends Component {
 							<div className="subscribebtn">SUBSCRIBE TO NEWSLETTER</div>
 						</div>
 						<div className="footeritem">
-							<div className="footerlink">Site</div>
+							{/* <div className="footerlink">Site</div> */}
 							<div className="footerlink">Terms and Condition</div>
 							<div className="footerlink">Privacy Policy</div>
 							<div className="footerlink">Company Homepage</div>
