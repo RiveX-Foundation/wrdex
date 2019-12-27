@@ -16,10 +16,11 @@ import Item04 from '../src/images/landing/graphic_4.png';
 import Item05 from '../src/images/landing/graphic_5.png';
 import Item06 from '../src/images/landing/graphic_6.png';
 //icon
-import Icon01 from '../src/images/landing/icon_1.png';
-import Icon02 from '../src/images/landing/icon_2.png';
-import Icon03 from '../src/images/landing/icon_3.png';
-import Icon04 from '../src/images/landing/icon_4.png';
+import newsletter from '../src/images/landing/newsletter.png';
+// import Icon01 from '../src/images/landing/icon_1.png';
+// import Icon02 from '../src/images/landing/icon_2.png';
+// import Icon03 from '../src/images/landing/icon_3.png';
+// import Icon04 from '../src/images/landing/icon_4.png';
 //slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -54,23 +55,30 @@ export class Header extends Component {
 export class Footer extends Component {
 	constructor(props) {
 		super(props);
-
 	}
+
 
 	render() {
 		return (
 			<footer className="landingfooter">
 				<div className="container">
 					<div className="inner">
-						<div className="footeritem">
+						<div className="newsletterctn">
+							<img src={newsletter} />
+							<div className="title">SUBSCRIBE TO OUR NEWSLETTER</div>
+							{/* <input type="text" value={this.state.emailaddress} onChange={this.handleChange} placeholder="Your Email Address" className="newsletterinput"/> */}
+							<div className="sendbtn" onClick={()=> alert("Coming Soon")}>
+								SUBSCRIBE
+							</div>
+						</div>
+						{/* <div className="footeritem">
 							<img src={FooterLogo} width="50" height="50" />
 							<div className="subscribebtn">SUBSCRIBE TO NEWSLETTER</div>
 						</div>
 						<div className="footeritem">
-							{/* <div className="footerlink">Site</div> */}
 							<div className="footerlink">Terms and Condition</div>
 							<div className="footerlink">Privacy Policy</div>
-							<div className="footerlink">Company Homepage</div>
+							<div className="footerlink" onClick={()=> window.open('https://www.rivex.io/','_blank')}>Company Homepage</div>
 						</div>
 						<div className="footeritem">
 							<div className="footerlink">Social Media</div>
@@ -80,9 +88,16 @@ export class Footer extends Component {
 								<img src={Icon03} className="footericon" onClick={() => window.open('https://twitter.com/RiveXFoundation', '_blank')} />
 								<img src={Icon04} className="footericon" onClick={() => window.open('https://github.com/RiveX-Foundation', '_blank')} />
 							</div>
+						</div> */}
+					</div>
+					<div className="footerbottom">
+						<div className="copyright">© 2019, WRDEX, Inc. All Rights Reserved.</div>
+						<div className="right">
+							<div className="item">Terms and Condition</div>
+							<div className="divider"></div>
+							<div className="item">Privacy Policy</div>
 						</div>
 					</div>
-					<div className="copyright">© 2019, WRDEX, Inc. All Rights Reserved.</div>
 				</div>
 			</footer>
 		);
@@ -110,7 +125,7 @@ export default class Landing extends Component {
 		}
 	}
 
-	componentWillMount() {
+	UNSAFE_componentWillMount() {
 		this._getWRDEXBanner();
 	}
 
