@@ -19,6 +19,7 @@ import Item06 from '../src/images/landing/graphic_6.png';
 import Icon01 from '../src/images/landing/icon_1.png';
 import Icon02 from '../src/images/landing/icon_2.png';
 import Icon03 from '../src/images/landing/icon_3.png';
+import Icon04 from '../src/images/landing/icon_4.png';
 //slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -74,9 +75,10 @@ export class Footer extends Component {
 						<div className="footeritem">
 							<div className="footerlink">Social Media</div>
 							<div>
-								<img src={Icon01} className="footericon" />
-								<img src={Icon02} className="footericon" />
-								<img src={Icon03} className="footericon" />
+								<img src={Icon01} className="footericon" onClick={()=> window.open('https://t.me/RiveXOfficial','_blank')}/>
+								<img src={Icon02} className="footericon" onClick={()=> window.open('https://medium.com/@RiveXOfficial','_blank')}/>
+								<img src={Icon03} className="footericon" onClick={()=> window.open('https://twitter.com/RiveXFoundation','_blank')}/>
+								<img src={Icon04} className="footericon" onClick={()=> window.open('https://github.com/RiveX-Foundation','_blank')}/>
 							</div>
 						</div>
 					</div>
@@ -142,7 +144,7 @@ export default class Landing extends Component {
 					<Slider {...this.state.settings}>
 						{this.state.bannerlist.map((item,index)=>{
 							return(
-								<div key={index}>
+								<div className="items" key={index}>
 									<img style={item.RedirectUrl != "" && item.RedirectUrl != null ? {cursor:'pointer'} : {}} src={item.PictureUrl} className="slickimg" onClick={item.RedirectUrl != "" && item.RedirectUrl != null ? ()=> window.open(`${item.RedirectUrl}`,'_blank'):null} />
 								</div>
 							)

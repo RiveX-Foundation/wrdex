@@ -115,6 +115,7 @@ header{
 }
 
 .subscribebtn{
+    text-shadow: 0 0 10px #fff;
     color: #6EF1FF;
     background-color: #3A437F;
     font-weight: bold;
@@ -153,8 +154,10 @@ header{
 }
 
 .colorbtn{
-    background-image: linear-gradient(to right, #fc7e75, #fe9679, #ffac82, #ffc290, #ffd6a4);
-    color: #fff;
+    // background-image: linear-gradient(to right, #fc7e75, #fe9679, #ffac82, #ffc290, #ffd6a4);
+    // color: #fff;
+        color: #6EF1FF;
+    background-color: #3A437F;
     border-radius: 50px;
     padding: 10px 30px;
     display: inline-flex;
@@ -331,9 +334,9 @@ header{
             min-height: 100px;
             min-width: 220px;
             .itemimg{
-                width: 260px;
+                width: 230px;
                 position: absolute;
-                right: -60px;
+                right: -35px;
                 bottom: -39px;
             }
         }
