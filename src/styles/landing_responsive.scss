@@ -68,6 +68,17 @@
     .slick-prev,.slick-next{
         width: 22px !important;
     }
+    .footerbottom{
+        flex-direction: column-reverse;
+        justify-content: center;
+        .right{
+            align-items: center;
+            justify-content: center;
+        }
+        .copyright{
+            margin-top: 10px;
+        }
+    }
   }
 
   @media only screen and (max-width: 590px) {

@@ -67,7 +67,7 @@ export class Footer extends Component {
 							<img src={newsletter} />
 							<div className="title">SUBSCRIBE TO OUR NEWSLETTER</div>
 							{/* <input type="text" value={this.state.emailaddress} onChange={this.handleChange} placeholder="Your Email Address" className="newsletterinput"/> */}
-							<div className="sendbtn" onClick={()=> alert("Coming Soon")}>
+							<div className="sendbtn" onClick={()=> window.open("https://docs.google.com/forms/d/e/1FAIpQLSfU06MUx3_6hc7N_vPf190JRUvyN8P1uWa5O4HTvEiobQrk7w/viewform","_blank")}>
 								SUBSCRIBE
 							</div>
 						</div>
