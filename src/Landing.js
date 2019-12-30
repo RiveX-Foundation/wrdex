@@ -67,7 +67,7 @@ export class Footer extends Component {
 							<img src={newsletter} />
 							<div className="title">SUBSCRIBE TO OUR NEWSLETTER</div>
 							{/* <input type="text" value={this.state.emailaddress} onChange={this.handleChange} placeholder="Your Email Address" className="newsletterinput"/> */}
-							<div className="sendbtn" onClick={()=> window.open("https://docs.google.com/forms/d/e/1FAIpQLSfU06MUx3_6hc7N_vPf190JRUvyN8P1uWa5O4HTvEiobQrk7w/viewform","_blank")}>
+							<div className="sendbtn" onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfU06MUx3_6hc7N_vPf190JRUvyN8P1uWa5O4HTvEiobQrk7w/viewform", "_blank")}>
 								SUBSCRIBE
 							</div>
 						</div>
@@ -93,9 +93,10 @@ export class Footer extends Component {
 					<div className="footerbottom">
 						<div className="copyright">© 2019, WRDEX, Inc. All Rights Reserved.</div>
 						<div className="right">
-							<div className="item">Terms and Condition</div>
+							<div className="item">Term of Service</div>
+							{/* <div className="item">Terms and Condition</div>
 							<div className="divider"></div>
-							<div className="item">Privacy Policy</div>
+							<div className="item">Privacy Policy</div> */}
 						</div>
 					</div>
 				</div>
@@ -167,6 +168,11 @@ export default class Landing extends Component {
 						</Slider>
 					</div>
 					: null}
+				<div className="fakeshdow"></div>
+				<div className="centersitetitle">
+					<div>A CROSS CHAIN DECENTRALIZED EXCHANGE</div>
+					<div>EMERGING A NEW TRADING EXPERIENCE</div>
+				</div>
 				<div className="landingcenter">
 					<div className="container">
 						<div className="landingitem">
