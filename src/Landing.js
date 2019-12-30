@@ -93,10 +93,9 @@ export class Footer extends Component {
 					<div className="footerbottom">
 						<div className="copyright">© 2019, WRDEX, Inc. All Rights Reserved.</div>
 						<div className="right">
-							<div className="item">Term of Service</div>
-							{/* <div className="item">Terms and Condition</div>
+							<div className="item">Terms of Service</div>
 							<div className="divider"></div>
-							<div className="item">Privacy Policy</div> */}
+							<div className="item">AML Policy</div>
 						</div>
 					</div>
 				</div>
