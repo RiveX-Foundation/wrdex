@@ -42,7 +42,7 @@ export class Header extends Component {
 			<header className="landingheader">
 				<div className="container">
 					<img src={Logo} className="logo" />
-					<a href="/main" className="colorbtn">
+					<a href="https://exchange.wrdex.io/" target="_blank" rel="noopener noreferrer" className="colorbtn">
 						EXCHANGE
 					</a>
 				</div>

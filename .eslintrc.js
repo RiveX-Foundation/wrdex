@@ -2,12 +2,14 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
+    webextensions: true
   },
   extends: ['eslint:recommended', 'plugin:react/recommended'],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
+    chrome: true
   },
   parser: 'babel-eslint',
   parserOptions: {

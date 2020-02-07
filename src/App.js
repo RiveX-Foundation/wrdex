@@ -21,12 +21,12 @@ export default class App extends React.Component {
                   <LazyRoute {...props} component={import('./Landing')} />
                 )}
               />
-              <Route
+              {/* <Route
                 path='/main'
                 render={props => (
-                  <LazyRoute {...props} component={import('./Main')} />
+                  <LazyRoute {...props} component={import('./main/src/App')} />
                 )}
-              />
+              /> */}
             </Switch>
         </Router>
       </div>
