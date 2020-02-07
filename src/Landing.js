@@ -134,7 +134,7 @@ export default class Landing extends Component {
 	}
 
 	_getWRDEXBanner = () => {
-		axios.post('http://rvxadmin.boxybanana.com/API/WRDex/GetWRDexBanner', {}).then((response) => {
+		axios.post('https://admin.rivex.io/API/WRDex/GetWRDexBanner', {}).then((response) => {
 			let result = response.data;
 			// console.log(response);
 			if (result.status == 200) {
